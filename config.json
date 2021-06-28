@@ -1,6 +1,6 @@
 {
-    "name": "TINY RGB",
-    "description": "Mục mở rộng sử dụng module Tiny RGB",
+    "name": "Tiny RGB",
+    "description": "Mục mở rộng của xbot cho module led Tiny RGB",
     "libs": [
     ],
     "blocks": [
