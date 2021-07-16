@@ -12,20 +12,20 @@ Blockly.Blocks["xbot_led_tiny_set_all"] = {
           type: "field_dropdown",
           name: "port",
           options: [
-            ["1", "1"],
-            ["2", "2"],
-            ["3", "3"],
-            ["4", "4"],
-            ["5", "5"],
-            ["6", "6"],
+            ["1", "0"],
+            ["2", "1"],
+            ["3", "2"],
+            ["4", "3"],
+            ["5", "4"],
+            ["6", "5"],
           ],
         },
         {
           type: "field_dropdown",
           name: "pin",
           options: [
-            ["1", "1"],
-            ["2", "2"],
+            ["1", "0"],
+            ["2", "1"],
           ],
         },
         {
@@ -117,8 +117,9 @@ Blockly.Python['xbot_led_tiny_set_all'] = function(block) {
   var pin = block.getFieldValue('pin');
   var option = block.getFieldValue('option');
   var color = Blockly.Python.valueToCode(block, 'COLOR', Blockly.Python.ORDER_ATOMIC);
+  Blockly.Python.definitions_['import_led_tiny'] = 'tiny_rgb = RGBLed(PORTS_DIGITAL['+ port +']['+ pin +'], 4)';
   // TODO: Assemble Python into code variable.
-  var code = "tiny_rgb.show(PORT_"+ port + pin + ", "+ option +", hex_to_rgb("+ color +"))\n";
+  var code = "tiny_rgb.show("+ option +", hex_to_rgb("+ color +"))\n";
   return code;
 };
 
@@ -129,7 +130,8 @@ Blockly.Python['xbot_led_tiny_rgb'] = function(block) {
   var RED = Blockly.Python.valueToCode(block, 'RED', Blockly.Python.ORDER_ATOMIC);
   var GREEN = Blockly.Python.valueToCode(block, 'GREEN', Blockly.Python.ORDER_ATOMIC);
   var BLUE = Blockly.Python.valueToCode(block, 'BLUE', Blockly.Python.ORDER_ATOMIC);
+  Blockly.Python.definitions_['import_led_tiny'] = 'tiny_rgb = RGBLed(PORTS_DIGITAL['+ port +']['+ pin +'], 4)';
   // TODO: Assemble Python into code variable.
-  var code = "tiny_rgb.show(PORT_"+ port + pin + ", "+ option +", ("+ RED +", "+ GREEN +", "+ BLUE +"))\n";
+  var code = "tiny_rgb.show("+ option +", ("+ RED +", "+ GREEN +", "+ BLUE +"))\n";
   return code;
 };
