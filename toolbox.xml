@@ -1,5 +1,5 @@
 <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-  <category name="TINY RGB" colour="#D31384" icon="th-large">
+  <category name="TINY RGB" colour="#ff3399" icon="th-large">
     <block type="xbot_led_tiny_set_all">
       <value name="COLOR">
         <shadow type="colour_picker">

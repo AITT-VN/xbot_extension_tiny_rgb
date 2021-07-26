@@ -2,7 +2,7 @@ Blockly.Blocks["xbot_led_tiny_set_all"] = {
   init: function () {
     this.jsonInit({
       inputsInline: true,
-      colour: "#D31384",
+      colour: "#ff3399",
       nextStatement: null,
       tooltip: "",
       message0: "%6 tiny rgb cổng %1 chân %2 đổi màu led %3 %4 %5",
@@ -57,7 +57,7 @@ Blockly.Blocks["xbot_led_tiny_set_all"] = {
 Blockly.Blocks["xbot_led_tiny_rgb"] = {
   init: function () {
     this.jsonInit({
-      colour: "#D31384",
+      colour: "#ff3399",
       nextStatement: null,
       previousStatement: null,
       tooltip: "",
